@@ -10,6 +10,7 @@ helps you produce publication-quality figures with very little code.
    :caption: Contents
 
    usage
+   gallery
    api
    examples
 

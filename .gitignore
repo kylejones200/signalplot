@@ -107,4 +107,7 @@ docs/_build/
 .cursor/
 .DS_Store
 
+# Test artifacts
+test_output.png
+
 

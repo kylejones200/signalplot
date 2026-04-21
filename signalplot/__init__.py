@@ -17,7 +17,7 @@ from .axes import (
 from .labels import accent_point, direct_label, emphasize_last, event_line, note
 from .style import ACCENT, SaveDefaults, apply, patch_pyplot, save, savefig
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 
 def figure(

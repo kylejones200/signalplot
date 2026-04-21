@@ -4,6 +4,10 @@ All notable changes to this project are documented in this file. The format is i
 
 ## [Unreleased]
 
+Nothing yet.
+
+## [0.1.3] — 2026-04-21
+
 ### Added
 
 - Pytest suite under `tests/` (public API, `apply()` / `save()`, figures, `patch_pyplot` in a subprocess).
@@ -16,7 +20,7 @@ All notable changes to this project are documented in this file. The format is i
 - `scripts/regen_gallery.py` to rebuild `docs/_static/gallery/` from `examples/`; docs CI runs it before HTML build.
 - **Documentation** URL in `pyproject.toml` `[project.urls]` (GitHub Pages).
 - README link to the hosted documentation site.
-- This changelog.
+- Changelog entries for this release.
 
 ### Changed
 
@@ -26,3 +30,4 @@ All notable changes to this project are documented in this file. The format is i
 - `pre-push` hook installs `mypy`, runs format check, lint, mypy, pytest, build, and smoke save (with `trap` cleanup for `test_output.png`).
 - `setup-hooks.sh` resolves the repo root, verifies `.githooks/`, and marks hooks executable.
 - `style_scatter_plot` narrows Matplotlib collections to `PathCollection` before styling (runtime clarity; stubs need small `type: ignore` on plural setters).
+- GitHub Actions workflows opt into **Node 24** for JavaScript actions (`FORCE_JAVASCRIPT_ACTIONS_TO_NODE24`).

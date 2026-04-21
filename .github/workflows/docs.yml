@@ -14,6 +14,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+# Run official JavaScript actions on Node 24 (GitHub is deprecating Node 20 on runners).
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     name: Build docs

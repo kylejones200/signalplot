@@ -32,9 +32,25 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install build
 
-      - name: Install project (with docs extras)
+      - name: Install project (docs + dev extras)
         run: |
-          python -m pip install ".[docs]"
+          python -m pip install ".[docs,dev]"
+
+      - name: Format (ruff)
+        run: |
+          python -m ruff format --check signalplot tests scripts
+
+      - name: Lint (ruff)
+        run: |
+          python -m ruff check signalplot tests scripts
+
+      - name: Typecheck (mypy)
+        run: |
+          python -m mypy
+
+      - name: Run tests
+        run: |
+          python -m pytest
 
       - name: Build distributions
         run: |

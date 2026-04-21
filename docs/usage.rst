@@ -1,6 +1,10 @@
 Usage guide
 ===========
 
+For narrative topics (when to call ``apply``, saving, axes helpers,
+labels, Jupyter, and API stability), see the **Guides** entries in the
+left-hand toctree.
+
 Installation
 ------------
 

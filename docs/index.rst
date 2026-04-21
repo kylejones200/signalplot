@@ -10,6 +10,10 @@ helps you produce publication-quality figures with very little code.
    :caption: Contents
 
    usage
+   defaults_and_save
+   axes_and_charts
+   labels_and_events
+   interop_and_stability
    gallery
    api
    examples

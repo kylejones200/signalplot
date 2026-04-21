@@ -2,7 +2,8 @@ Examples
 ========
 
 The repository ships small runnable scripts under :mod:`examples` that
-demonstrate typical SignalPlot patterns.
+demonstrate typical SignalPlot patterns. For rendered figures, see
+:doc:`gallery`.
 
 Time series line
 ----------------

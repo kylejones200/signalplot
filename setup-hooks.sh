@@ -1,15 +1,26 @@
-#!/bin/bash
-# Setup script to install git hooks
+#!/usr/bin/env bash
+# Point this repository at hooks in .githooks/ (run from anywhere inside the repo).
 
-echo "Setting up git hooks..."
+set -euo pipefail
 
-# Configure git to use .githooks directory
-git config core.hooksPath .githooks
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || {
+    echo "Error: not inside a Git repository." >&2
+    exit 1
+}
 
-if [ $? -eq 0 ]; then
-    echo "✓ Git hooks configured successfully"
-    echo "  Hooks will be loaded from .githooks/"
-else
-    echo "✗ Failed to configure git hooks"
+cd "$ROOT"
+
+if [ ! -d .githooks ]; then
+    echo "Error: .githooks/ not found at repository root." >&2
     exit 1
 fi
+
+chmod +x .githooks/* 2>/dev/null || true
+
+echo "Setting up git hooks in ${ROOT}..."
+
+git config core.hooksPath .githooks
+
+echo "✓ Git hooks configured (core.hooksPath=.githooks)"
+echo "  Pre-push runs: ruff format + lint, mypy, pytest, build, and a short smoke save."
+echo "  Override the interpreter with: PYTHON=/path/to/python git push"

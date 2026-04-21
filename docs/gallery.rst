@@ -49,7 +49,12 @@ Event highlight
    :alt: Event highlight example
    :class: gallery-image
 
-To regenerate these images, run the scripts in ``examples/`` and save the
-output PNGs into ``docs/_static/gallery/`` with the matching filenames.
+To regenerate these images from the repository root (requires a dev
+install so **numpy** is available for the examples)::
+
+    pip install -e ".[dev]"
+    python scripts/regen_gallery.py
+
+Each script writes into ``docs/_static/gallery/`` with the filenames above.
 
 

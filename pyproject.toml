@@ -29,6 +29,7 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://github.com/kylejones200/signalplot"
+Documentation = "https://kylejones200.github.io/signalplot/"
 Source = "https://github.com/kylejones200/signalplot"
 
 [project.optional-dependencies]
@@ -37,9 +38,37 @@ docs = [
   "furo>=2023.9.10",
   "sphinx-autodoc-typehints>=1.25.0",
 ]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.8",
+  "numpy>=1.24",
+  "mypy>=1.8",
+]
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["signalplot*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["signalplot", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["signalplot"]
+warn_unused_configs = true
+check_untyped_defs = true
+ignore_missing_imports = true
+no_implicit_optional = true
+show_error_codes = true
 
 

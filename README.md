@@ -56,6 +56,10 @@ SignalPlot installs like any small Python utility.
 
 pip install signalplot
 
+## Documentation
+
+Guides (defaults, saving, axes, labels, interoperability) and the full API live on **[GitHub Pages](https://kylejones200.github.io/signalplot/)**, built from the `docs/` directory when changes land on the default branch. The same sources build locally with Sphinx (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+
 ## Basic Usage
 
 Import SignalPlot once at the start of your script. Create plots with standard Matplotlib calls. SignalPlot applies its defaults automatically.
@@ -75,6 +79,10 @@ plt.show()
 ## Intended Audience
 
 SignalPlot serves practitioners who care about analytical integrity. It fits academic work, internal reports, policy analysis, and engineering workflows. It favors repeatability and trust over style experimentation.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for environment setup, local checks, and docs builds. Maintainer releases are summarized in [RELEASING.md](RELEASING.md). Priorities and ideas are collected in [ROADMAP.md](ROADMAP.md). Notable releases are listed in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

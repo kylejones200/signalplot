@@ -154,5 +154,3 @@ def event_line(
         )
 
     return ax
-
-

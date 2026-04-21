@@ -74,7 +74,9 @@ def small_multiples(
     if isinstance(axes_grid, mpl.axes.Axes):
         axes_list = [axes_grid]
     else:
-        axes_list = [ax for row in axes_grid for ax in (row if isinstance(row, Iterable) else [row])]
+        axes_list = [
+            ax for row in axes_grid for ax in (row if isinstance(row, Iterable) else [row])
+        ]
 
     # Only keep as many axes as requested and tidy them.
     axes_list = axes_list[:count]
@@ -143,5 +145,3 @@ __all__ = [
     "event_line",
     "force_bar_zero",
 ]
-
-

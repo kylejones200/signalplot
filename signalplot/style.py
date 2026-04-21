@@ -114,21 +114,9 @@ def save(
 
     params: dict[str, Any] = {
         "dpi": dpi if dpi is not None else mpl.rcParams["savefig.dpi"],
-        "bbox_inches": (
-            bbox_inches
-            if bbox_inches is not None
-            else mpl.rcParams["savefig.bbox"]
-        ),
-        "facecolor": (
-            facecolor
-            if facecolor is not None
-            else mpl.rcParams["savefig.facecolor"]
-        ),
-        "edgecolor": (
-            edgecolor
-            if edgecolor is not None
-            else mpl.rcParams["savefig.edgecolor"]
-        ),
+        "bbox_inches": (bbox_inches if bbox_inches is not None else mpl.rcParams["savefig.bbox"]),
+        "facecolor": (facecolor if facecolor is not None else mpl.rcParams["savefig.facecolor"]),
+        "edgecolor": (edgecolor if edgecolor is not None else mpl.rcParams["savefig.edgecolor"]),
     }
     params.update(kwargs)
     plt.savefig(path, **params)
@@ -168,5 +156,3 @@ def patch_pyplot(defaults: Optional[Mapping[str, Any]] = None) -> None:
         return _ORIGINAL_SAVEFIG(*args, **merged)
 
     plt.savefig = _wrapped  # type: ignore[assignment]
-
-

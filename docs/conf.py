@@ -6,13 +6,15 @@ from datetime import datetime
 
 sys.path.insert(0, os.path.abspath(".."))
 
+import signalplot  # noqa: E402
+
 project = "SignalPlot"
 author = "Kyle Jones"
 current_year = datetime.now().year
 copyright = f"{current_year}, {author}"
 
 # The full version, including alpha/beta/rc tags
-release = "0.1.1"
+release = signalplot.__version__
 
 extensions = [
     "sphinx.ext.autodoc",

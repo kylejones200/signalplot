@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Iterable, Tuple
 
 import matplotlib as mpl
+from matplotlib.collections import PathCollection
 
 __all__ = [
     "tidy_axes",
@@ -115,9 +116,12 @@ def style_scatter_plot(ax: mpl.axes.Axes) -> mpl.axes.Axes:
     tidy_axes(ax)
 
     for collection in ax.collections:
-        collection.set_edgecolors(_BLACK)
-        collection.set_facecolors(_WHITE)
-        collection.set_linewidths(1.0)
+        if not isinstance(collection, PathCollection):
+            continue
+        # Matplotlib runtime API; typeshed stubs omit plural setters on PathCollection.
+        collection.set_edgecolors(_BLACK)  # type: ignore[attr-defined]
+        collection.set_facecolors(_WHITE)  # type: ignore[attr-defined]
+        collection.set_linewidths(1.0)  # type: ignore[attr-defined]
 
     return ax
 
@@ -137,6 +141,3 @@ def style_bar_plot(ax: mpl.axes.Axes, *, horizontal: bool = False) -> mpl.axes.A
         ax.tick_params(left=False)
 
     return ax
-
-
-
